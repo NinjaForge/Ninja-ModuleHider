@@ -1,0 +1,47 @@
+<h3>Basic Setup</h3>
+    <ul>
+        <li>Install the module</li>
+        <li>Disable mootools loading if already loaded by your template or other extensions</li>
+        <li>Enter the module IDs for the modules you wish to display </li>
+        <li>Change the opening and closing messages if desired</li>
+        <li>Decide to place the open/close handle above or below the panel</li>         
+        <li>Publish the extension</li>
+    </ul>
+    <h3>Tips and Extended Use FAQ</h3>
+    <dl>
+        <dt>Can I combine multiple modules in one pane?</dt>
+        <dd>Yes, simply enter more than one module ID, seperated by commas</dd>
+        <dt>Can I have multiple modulehiders on 1 page?</dt>
+        <dd>yes, simply copy the module like you would any other joomla module.</dd>
+        <dt>How do I change the order the modules appear in?</dt>
+        <dd>Simply change the order that they are entered into the Module IDs field.</dd>
+        <dt>How do I restrict access to contained modules?</dt>
+        <dd>To take advantage of the access level controls, just set the access level for the displayed modules in the module manager screen as you normally would.</dd>
+        <dt>Can I use a different Module Suffix?</dt>
+        <dd>You can change the module class suffix if you wish to use your template's module styling. We reccomend -flush however, as in 99% of cases it will give the best appearance</dd>
+        <dt>How can I style the handle to be more attractive?</dt>
+        <dd>Styling the handle can be done in two ways. Firstly by entering HTML directly into the handle text field (such as an img tag), and secondly by using your site's css to style them.<br/><br/>The Ninja Modulehider handle has the following structure to help you lay them out and affect the design:
+        </dd>        
+        </dl>
+        <pre><code>
+&lt;div class="mdlhdr_cont" id="mdlhdr_[this module id]"&gt;
+  &lt;div class="mdlhdr_hdl" id="mdlhdr_hdl_[this module id]">
+  	[Handle message]
+  &lt;/div&gt;
+  &lt;div class="mdlhdr_innr initial_hide" id="mdlhdr_innr_[this module id]"&gt;
+    [The modules are displayed here]
+  &lt;/div&gt;
+&lt;/div&gt;
+        </code></pre>
+       
+    <h3>Trouble Shooting FAQ</h3>
+    <dl>
+        <dt>What if my site already has Mootools Installed?</dt>
+        <dd>Select 'No' for the 'Include mootools script?' parameter if you have another version of the mootools JavaScript library.</dd>
+        <dt>My site already has Mootools Installed, but the Modulehider doesn't work!</dt>
+        <dd>In order to conserve space and improve performance, Mootools can be downloaded with only the functions needed by a particular developer. Because Ninja Modulehider needs the "slider" functions, if the mootools script your template/component/etc. is loading doesn't contain these functions, then the module hider won't work. In this case we suggest disabling the other mootools script, and loading the one from modulehider. This is because modulehider includes a complete mootools script with all functions, for the widest compatibility.</dd>
+       <dt>What if my site has a single combined CSS file?</dt>
+        <dd>'Include CSS file', in the advanced parameters tab can be set to 'No' if you have manually entered the css into your own template CSS files. Putting all your css into one or two files will improve your site's load speed.</dd>
+        <dt>Wow! My flash banner and shoutbox are all messed up and don't disappear.</dt>
+        <dd>Many complex modules, in particular flash ones, render themselves in odd ways which make it difficult or even impossible to hide them. There is unfortunately nothing (we know of) that we can do about it.</dd>
+    </dl>

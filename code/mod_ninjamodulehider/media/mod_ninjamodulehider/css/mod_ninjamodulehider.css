@@ -1,0 +1,117 @@
+/*
+* The modulehider is designed to allow a user to place a module position with a 
+* different style or direction -inside- another module position. 
+* On top of this it allows the hider to be opened and shut and remembers
+* the open/shut state over pages via a cookie.
+* A cookie was chosen to allow it to function for non logged in people. 
+* (c) Copyright: Ninjoomla, www.ninjoomla.com - Code so sharp, it hurts.
+* email: daniel@ninjoomla.com 
+* date: 18 July, 2007
+* Release: 1.1
+* PHP Code License : http://www.gnu.org/copyleft/gpl.html GNU/GPL 
+* JavaScript Code & CSS  : Ninjoomla License - http://www.ninjoomla.com
+*
+* Changelog
+*
+* 1.1 July 18, 07 : 
+*       Added a lot of comments to the source (pro version) 
+*       Revised the JS to be cleaner and stripped most of it out into a seperate file
+*       Included the initial_hidden class to hide the modulehider contents while the JS is loading.       
+* 
+* 1.0 May 3, 07 : 
+*       Initial Version
+* 
+*/
+
+.mdlhdr_hdl, .handle {
+    cursor:pointer;
+    text-align: center;
+    display: inline-block;
+}
+
+/******* 
+* This class below is used to make the module hider contents invisible while the page is being loaded.
+* It will be removed using javascript once the hider has been set up.
+* If Javascript is not enabled then the style information inside the <noscript> tags 
+* defined in mod_modulehider.php will ensure that the contents are displayed.  
+*******/
+.initial_hide, .initial-hide {
+    visibility: hidden;
+}
+
+.ninja-module-hider.panel-overlay {
+	position: absolute;
+	z-index: 12;
+	text-align: center;
+}
+
+.ninja-module-hider.panel-overlay .nf-module {
+	-webkit-border-bottom-right-radius: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+	-moz-border-radius-bottomright: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	background-color: hsla(0, 0%, 10%, .8);
+	padding: 0 20px;
+}
+
+.ninja-module-hider.panel-overlay .handle {
+	white-space: nowrap;
+	padding: 0 4px;
+	-webkit-border-bottom-right-radius: 4px;
+	-webkit-border-bottom-left-radius: 4px;
+	-moz-border-radius-bottomright: 4px;
+	-moz-border-radius-bottomleft: 4px;
+	border-bottom-right-radius: 4px;
+	border-bottom-left-radius: 4px;
+	background-color: hsla(0, 0%, 10%, .8);
+}
+.ninja-module-hider.panel-overlay.horizontal .ninja-module-hider {
+	
+}
+
+.ninja-module-hider.panel-overlay.horizontal {
+	position: fixed;
+	top: 20px;
+	-webkit-border-bottom-right-radius: 10px;
+	-webkit-border-top-right-radius: 10px;
+	-moz-border-radius-bottomright: 10px;
+	-moz-border-radius-topright: 10px;
+	border-bottom-right-radius: 10px;
+	border-top-right-radius: 10px;
+	-webkit-border-bottom-left-radius: 0px;
+	-moz-border-radius-bottomleft: 0px;
+	border-bottom-left-radius: 0px;
+	background-color: hsla(0, 0%, 10%, .8);
+}
+
+.ninja-module-hider.panel-overlay.horizontal .nf-module {
+	padding: 20px;
+	min-width: 150px;
+	background-color: transparent;
+}
+
+.ninja-module-hider.panel-overlay.horizontal .handle {
+	position: absolute;
+	line-height: 20px;
+	margin-top: -10px;
+	top: 50%;
+	left: 100%;
+	white-space: nowrap;
+	
+	-webkit-border-bottom-right-radius: 4px;
+	-webkit-border-top-right-radius: 4px;
+	-webkit-border-bottom-left-radius: 0px;
+	-moz-border-radius-bottomright: 4px;
+	-moz-border-radius-bottomleft: 0px;
+	-moz-border-radius-topright: 4px;
+	border-bottom-right-radius: 4px;
+	border-top-right-radius: 4px;
+	border-bottom-left-radius: 0px;
+	background-color: hsla(0, 0%, 10%, .8);
+}
+.ninja-module-hider.panel-overlay.horizontal .ninja-module-hider {
+	min-width: 150px;
+	padding: 20px;
+}

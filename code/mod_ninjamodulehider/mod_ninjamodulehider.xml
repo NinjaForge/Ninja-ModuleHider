@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="module" version="1.5.0" method="upgrade">
+	<name>Ninja Modulehider</name>
+	<author>Daniel Chapman - Ninja Forge</author>
+	<creationDate>April 2009</creationDate>
+	<copyright>2009-2010 Daniel Chapman, NinjaForge.com</copyright>
+	<license>This extension is released under the GNU/GPL License - http://www.gnu.org/copyleft/gpl.html</license>
+	<authorEmail>support@ninjaforge.com</authorEmail>
+	<authorUrl>http://ninjaforge.com</authorUrl>
+	<version>2.2.3</version>
+	<description>MODULE DESCRIPTION</description> 
+	<files folder="modules/mod_ninjamodulehider">
+		<filename module="mod_ninjamodulehider">mod_ninjamodulehider.php</filename>
+		<filename>helper.php</filename>
+		<filename>.htaccess</filename>
+		<folder>dashboard</folder>
+		<folder>elements</folder>
+		<folder>tmpl</folder>
+	</files>
+	
+	<media folder="media/mod_ninjamodulehider" destination="mod_ninjamodulehider">
+		<folder>css</folder>
+		<folder>images</folder>
+		<folder>js</folder>
+		<file>.htaccess</file>
+	</media>
+	
+	<params addpath="/modules/mod_ninjamodulehider/elements">
+		<param name="dynXML" type="dynXML" label="" />
+		<param name="dynCustomCSS" type="dynCustomCSS" label="CUSCSS" description="CUSCSSTXT" rows="3" cols="50" />
+		<param name="moduleclass_sfx" type="text" default="" label="MOD SUFFIX" description="MOD SUFFIX DESC" />		
+		<param name="inc_mootools" type="radio" default="0" label="INCL MOO" description="INCL MOO DESC">
+	        <option value="1">YES</option>
+	        <option value="0">NO</option>
+	    </param> 
+	    <param name="use_cookie" type="radio" default="0" label="USE COOKIE" description="USE COOKIE DESC">
+	        <option value="1">YES</option>
+	        <option value="0">NO</option>
+	    </param>
+	    <param name="initial_state" type="radio" default="0" label="INITIAL STATE" description="INITIAL STATE DESC">
+	        <option value="1">OPEN</option>
+	        <option value="0">CLOSED</option>
+	    </param> 
+	    <param name="modids" type="text" default="" label="MOD IDS" description="MOD IDS DESC"/>
+	    <param name="validator" type="dynModIDValidator" label="VALIDATOR" description="VALIDATORTXT" />
+		<param name="op_message" type="text" default="&lt;a href=&quot;#&quot;&gt;Close Panel&lt;/a&gt;" label="CLOSE MESSAGE" description="CLOSE MESSAGE DESC" />     
+		<param name="cl_message" type="text" default="&lt;a href=&quot;#&quot;&gt;Open Panel&lt;/a&gt;" label="OPEN MESSAGE" description="OPEN MESSAGE DESC" />     
+		<param name="top_bot" type="radio" default="1" label="HANDLE LOC" description="HANDLE LOC DESC">
+			<option value="1">HANDLE LOC ABOVE</option>
+      <option value="0">HANDLE LOC BELOW</option>
+	  </param>
+	  <param name="panel" type="radio" default="inline" label="PANEL BEHAVIOR" description="PANEL BEHAVIOR DESC">
+	      <option value="inline">INLINE</option>
+	      <option value="overlay">OVERLAY</option>
+	  </param>
+	  <param name="mode" type="radio" default="vertical" label="PANEL MODE" description="PANEL MODE DESC">
+	      <option value="vertical">VERTICAL</option>
+	      <option value="horizontal">HORIZONTAL</option>
+	  </param>
+	  <param name="width" type="text" default="100%" label="Width" />
+	  </params> 
+	 <params group="advanced"> 	                   
+	    <param name="inc_css" type="radio" default="1" label="INCL CSS" description="INCL CSS DESC">
+	      <option value="1">YES</option>
+	      <option value="0">NO</option>
+	    </param>
+	    <param name="useLangFile" type="radio" default="0" label="USE LANG" description="USE LANG DESC">
+	        <option value="1">YES</option>
+	        <option value="0">NO</option>
+	    </param> 
+	    <param name="mod_style" type="list" default="xhtml" label="MOD LAYOUT" description="MOD LAYOUT DESC">
+				<option value="rounded">ROUNDED</option>
+				<option value="none">RAW</option>
+				<option value="table">TABLE</option>
+				<option value="horz">HORZ</option>
+				<option value="xhtml">XHTML</option>
+				<option value="outline">OUTLINE</option>			
+				<option value="custom">CUSTOM</option>
+			</param> 	
+	    <param name="custChrome" type="text" default="" label="CUSTOM CHROME" description="CUSTOM CHROME DESC" />
+	    <param name="dashboard" type="dashboard" default="" label="Slide" />  
+	  </params>                           
+	
+	
+	<languages folder="language">
+	        <language tag="en-GB">en-GB/en-GB.mod_ninjamodulehider.ini</language>
+	</languages>
+</install>  
